@@ -135,7 +135,7 @@ func getComodosByImovel(imovelID int) ([]Comodo, error) {
 }
 
 func updateImovel(c *gin.Context) {
-	id := c.Param("id") 
+	id := c.Param("id")
 
 	type InputImovel struct {
 		Descricao  string `json:"descricao"`
@@ -155,7 +155,7 @@ func updateImovel(c *gin.Context) {
 	if len(input.DataCompra) > 10 {
 		parsedDate, err = time.Parse(time.RFC3339, input.DataCompra)
 	} else {
-		parsedDate, err = time.Parse("2006-01-02", input.DataCompra) 
+		parsedDate, err = time.Parse("2006-01-02", input.DataCompra)
 	}
 
 	if err != nil {
